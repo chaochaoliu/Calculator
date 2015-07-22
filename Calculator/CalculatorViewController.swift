@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
 
+    @IBOutlet var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        resultLabel.text = "0";
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func numberButtonTapped(sender: UIButton) {
+        resultLabel.text = resultLabel.text! + sender.titleLabel!.text!
+    }
 
 }
 
